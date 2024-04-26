@@ -1,0 +1,284 @@
+doctype html
+html(lang="ar", dir="rtl")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title أكاديمية طلاب الجنة
+
+    //- Search Engine Meta
+    meta(name="description", content="مرحبا نحن أكاديمة طلاب الجنة. نهدف لتعليم الناس كتاب الله عز وجل. لدينا اخوة واخوات متدربين جيدا لتعليم جميع الفئات من أطفال ورجال ونساء بسعر رمزي جدا.")
+    meta(name="keywords", content="Quran, Tollab, El-Gannah, ElGannah, طلاب, أكاديمية, الجنة, قران, قرآن, تحفيظ, رجال, نساء, أطقال")
+
+    //- Font Awesome Style Sheet
+    link(rel="stylesheet", href="assets/css/brands.min.css")
+
+    //- Custom Style Sheet
+    link(rel="stylesheet", href="assets/css/main.css")
+    
+  body
+    //- Hero Section
+    section#home.hero 
+      .navbar
+        .container
+          .brand
+            img(src="assets/images/brand.svg", width="128", height="68", alt="أكاديمية طلاب الجنة")
+          #nav-icon.nav-icon(tabindex="0")
+            span 
+            span 
+            span 
+          #nav-list.nav-list
+            ul
+              li
+                a(href="#home") الرئيسية
+              li
+                a(href="#about") نبذة عنا
+              li
+                a(href="#services") خدماتنا
+              li
+                a(href="#testimonials") آراء طلابنا
+              li
+                a(href="#FQA") الأسئلة الشائعة
+
+      main
+        .container
+          .content
+            h1 أكاديمية طلاب الجنة
+            hr
+            p أكاديمية لتحفيظ وتعليم القرآن الكريم والعلوم الشرعية أونلاين للرجال والنساء والأطفال
+            a.btn(href="https://wa.me/201026360040", target="_blank") تواصل معنا
+
+      .shape-divider.bottom
+        svg(viewBox="0 0 1200 120" preserveAspectRatio="none")
+          path(d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill")
+          path(d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill")
+          path(d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill")
+            
+    //- About Section
+    section#about.about 
+      .container
+        .card
+          .picture 
+            .img-container.md
+              img.high-res(src="assets/images/about/about-md.jpg", width="320", height="320", alt="صورة للعرض", style="object-fit:contain")
+              img(src="assets/images/about/about-md-px.jpg", width="320", height="320", alt="صورة للعرض", style="object-fit:contain")
+            .img-container.sm
+              img.high-res(src="assets/images/about/about-sm.webp", width="750", height="500", alt="صورة للعرض")
+              img(src="assets/images/about/about-sm-px.jpg", width="750", height="500", alt="صورة للعرض")
+            .img-container.xsm
+              img.high-res(src="assets/images/about/about-xsm.webp", width="430", height="230", alt="صورة للعرض")
+              img(src="assets/images/about/about-sm-px.jpg", width="430", height="230", alt="صورة للعرض")
+          .content
+            h4 نبذة عن:
+            h2 أكاديمية طلاب الجنة
+            p هي مؤسسة متخصصة في تحفيظ وتعليم القرآن الكريم وعلومه عبر الإنترنت لجميع الأعمار في جميع دول العالم على يد أفضل المعلمين والمعلمات المتخصصين في مجال التحفيظ أونلاين وذو خبرة عالية بطرق التدريس عبر الإنترنت فنحن نسعى لتقديم المساعدة لكل من يريد تعلم القرآن الكريم بالتجويد سواء من الرجال أو النساء أو الأطفال ونحاول أيضا أن نزرع عقيدة ودين وسلوكيات مفتقدينا في الجيل الجديد.
+            .social 
+              a(href="https://wa.me/201026360040", target="_blank")
+                i.fa-brands.fa-whatsapp
+              a(href="https://www.facebook.com/profile.php?id=100063860028772&mibextid=ZbWKwL", target="_blank")
+                i.fa-brands.fa-facebook
+            
+    //- Services Section
+    section#services.services 
+      .container 
+        .section-headding 
+          .title
+            h2 خدماتنا
+            img.bg(src="assets/images/headding-bg.svg", width="430", height="67", alt="-")
+          .brief 
+            p الأكاديمية تُقدم حلقات تحفيظ القرآن لجميع الأعمار والجنسين بدءًا من سن ٤ سنوات وتعمل على مدار ٢٤ ساعة لتلائم جدولك اليومي، مع توفير برامج متنوعة للاختيار من بينها.
+            img.underline(src="assets/images/services/underline.svg", width="358", height="27", alt="-----------")
+        
+        .cards
+          .card
+            .img
+              img(src="assets/images/services/fourth.webp", width="300", height="300", alt="صورة للعرض", loading="lazy")
+            .card__title
+              h3 1-حلقات تحفيظ الرجال
+              img.underline(src="assets/images/services/underline.svg", width="161", height="12", alt="-------------", loading="lazy")
+            .card__content
+              p توفر الاكاديمية حلقات تحفيظ جماعية وفردية للرجال بشكل منظم في أوقات مناسبة عن طريق الانترنت، تتضمن حفظ جديد ومراجعة الماضي وتعلم أحكام التجويد .
+          
+          .card
+            .img
+              img(src="assets/images/services/sixth.webp", width="300", height="300", alt="صورة للعرض", loading="lazy")
+            .card__title
+              h3 2-حلقات تحفيظ للنساء
+              img.underline(src="assets/images/services/underline.svg", width="161", height="12", alt="-------------", loading="lazy")
+            .card__content
+              p توفر الاكاديمية حلقات تحفيظ منفصلة للنساء علي يد معلمات متخصصات عن طريق الانترنت، تشمل حفظ جديد ومراجعة الماضي وتعلم أحكام التجويد .
+          
+          .card
+            .img
+              img(src="assets/images/services/second.webp", width="300", height="300", alt="صورة للعرض", loading="lazy")
+            .card__title
+              h3 3-حلقات تحفيظ للأطفال
+              img.underline(src="assets/images/services/underline.svg", width="161", height="12", alt="-------------", loading="lazy")
+            .card__content
+              p نقدم حلقات تحفيظ مشوقة للأطفال، فردية وجماعية، تتبع نظام التلقين والترديد مع تحسين مخارج الحروف والتجويد بحيث يخرج الطالب وقد حفظ الورد بشكل كبير في الحلقه . كما ندرس بعض الآداب والأحاديث المهمة .
+          
+          .card
+            .img
+              img(src="assets/images/services/first.webp", width="300", height="300", alt="صورة للعرض", loading="lazy")
+            .card__title
+              h3 4-دورات في العلوم الشرعية ونور البيان
+              img.underline(src="assets/images/services/underline.svg", width="161", height="12", alt="-------------", loading="lazy")
+            .card__content
+              p توفر الأكاديمية دورات متعدده  تهدف الي تعلم ما لا يسع المسلم جهله من أحاديث وسيره وعقيده وقصص إسلاميه و فقه مبسط   وتقدم أيضا دورات في نور البيان
+          
+          .card
+            .img
+              img(src="assets/images/services/fifth.webp", width="300", height="300", alt="صورة للعرض", loading="lazy")
+            .card__title
+              h3 5-تصحيح وتحسين التلاوة
+              img.underline(src="assets/images/services/underline.svg", width="161", height="12", alt="-------------", loading="lazy")
+            .card__content
+              p توفر الأكاديمية حلقات لتصحيح التلاوه يتعلم فيها الطالب/ة  مخارج الحروف الصحيحة والقراءة الصحيحة للايات وكيفيه تطبيق أحكام التجويد بشكل عملي حتي يتقن  من تلاوة وترتيل القرآن الكريم
+          
+          .card
+            .img(style="overflow: hidden; aspect-ratio: unset; width: 20rem;")
+              img(src="assets/images/services/third.webp", width="300", height="300", alt="صورة للعرض", loading="lazy", style="transform: scale(1.3); width: auto")
+            .card__title
+              h3 6-خدمات للخاتمين والخاتمات
+              img.underline(src="assets/images/services/underline.svg", width="161", height="12", alt="-------------", loading="lazy")
+            .card__content
+              p تقدم الأكاديمية عدة خدمات للخاتمين مثل:
+              ul
+                li حلقات لثبيت القرآن الكريم
+                li حلقات لتعلم القراءات والمتون
+                li حلقات للحصول على الإجازات والاسانيد العلمية
+
+    //- Reminder Section
+    section.reminder
+      .shape-divider.top
+        svg(viewBox="0 0 1200 120" preserveAspectRatio="none")
+          path(d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill")
+          path(d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill")
+          path(d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill")
+      .shape-divider.bottom
+        svg(viewBox="0 0 1200 120" preserveAspectRatio="none")
+          path(d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill")
+          path(d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill")
+          path(d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill")
+      .container 
+        p
+          | قال ﷺ: « 
+          span الماهِرُ بالقرآن مع السَّفَرة الكرام البَرَرة
+          |  »
+            
+    //- Testimonials Section
+    section#testimonials.testimonials 
+      .container 
+        .section-headding 
+          .title
+            h2 آراء طلابنا
+            img.bg(src="assets/images/headding-bg.svg", width="430", height="67", alt="-")
+        .slider
+          .cards-container 
+            .card 
+              img(src="assets/images/testimonials/testimonials-1.webp", width="368", height="654", alt="-", loading="lazy")
+            .card 
+              img(src="assets/images/testimonials/testimonials-2.webp", width="368", height="654", alt="-", loading="lazy")
+            .card 
+              img(src="assets/images/testimonials/testimonials-3.webp", width="368", height="654", alt="-", loading="lazy")
+            .card 
+              img(src="assets/images/testimonials/testimonials-4.webp", width="368", height="654", alt="-", loading="lazy")
+            .card 
+              img(src="assets/images/testimonials/testimonials-5.webp", width="368", height="654", alt="-", loading="lazy")
+            .card 
+              img(src="assets/images/testimonials/testimonials-6.webp", width="368", height="654", alt="-", loading="lazy")
+
+          .slider-controls
+            button.prev.disabled(aria-label="Previous")
+            button.next(aria-label="Next")
+            
+    //- Testimonials Section
+    section#FQA.FQA 
+      .container 
+        .section-headding 
+          .title
+            h2 الأسئلة الشائعة
+            img.bg(src="assets/images/headding-bg.svg", width="430", height="67", alt="-")
+        .box 
+          .row
+            .q 
+              p هل لديكم حلقة تجريبية للطلاب قبل الاشتراك؟
+              .arrow
+            .a
+              div
+                p نعم تقدم الأكاديمية حلقة تجريبية للطلاب كفرصة لتجربة الأسلوب والمنهجية المستخدمة في التحفيظ وتقييم ما إذا كان يناسب احتياجاتهم وتوقعاتهم.
+
+          .row
+            .q 
+              p هل يوجد مرونة في  اختيار الشيخ أو المعلمة؟
+              .arrow
+            .a
+              div
+                p نعم يمكن للطلاب تغيير الشيخ أو المعلمة في أي وقت دون الحاجة لأسباب محددة. هذا يعطيهم المرونة في اختيار المعلم الذي يتناسب مع طريقة تعلمهم ويستجيب لاحتياجاتهم الفردية.
+
+          .row
+            .q 
+              p ماذا يحدث إذا لم يكن الطالب راضيًا عن البرنامج بعد الاشتراك؟
+              .arrow
+            .a
+              div
+                p في حالة عدم رغبة الطالب في استكمال البرنامج بعد الاشتراك، يمكنه طلب تغيير الشيخ او استرداد باقي رسوم الاشتراك. هذا يمنحه ضمانًا إضافيًا بأنه لن يضطر للاستمرار في البرنامج إذا لم يكن راضيًا عنه.
+
+          .row
+            .q 
+              p كيف توفرون الدعم والمتابعة للطلاب؟
+              .arrow
+            .a
+              div
+                p نحن نقدم الدعم والمتابعة للطلاب من خلال المشرفين والمشرفات، الذين يعملون على حل أي مشكلة قد تواجههم في رحلتهم لحفظ القرآن.
+
+          .row
+            .q 
+              p ماهي عدد الحلقات التي توفرها الأكاديمية؟
+              .arrow
+            .a
+              div
+                p نوفر حلقات من اول حلقه واحده في الأسبوع الي عدة حلقات علي مدار الاسبوع كامل فيمكن للطلاب اختيار عددالحلقات التي تناسب إحتياجاتهم. 
+
+          .row
+            .q 
+              p هل  الحلقات باشتراك مادي؟
+              .arrow
+            .a
+              div
+                p نعم الحلقات باشتراك مادي مناسب للجميع ونوفر طرق متعدده لدفع الاشتراك لتناسب الجميع.
+
+    //- Last Reminder Section
+    section.last-reminder 
+      .container 
+        .text
+          h2 لا تنسى التسجيل عسى ان ينفع الله بنا
+          p قال ﷺ: “أهل القرآن هم أهل الله وخاصته” 
+        a.btn(href="https://wa.me/201026360040", target="_blank") تواصل معنا
+        
+    //- Footer
+    footer 
+      .container.sm-spaces
+        .row 
+          .brand
+            img(src="assets/images/brand.svg", width="128", height="68", alt="أكاديمية طلاب الجنة")
+          .social 
+            a(href="https://wa.me/201026360040", target="_blank")
+              i.fa-brands.fa-whatsapp
+              | طلاب الجنة
+            a(href="https://www.facebook.com/profile.php?id=100063860028772&mibextid=ZbWKwL", target="_blank")
+              i.fa-brands.fa-facebook
+              | طلاب الجنة
+        .pagination 
+          a(href="#home") الرئيسية
+          a(href="#about") نبذة عنا
+          a(href="#services") خدماتنا
+          a(href="#testimonials") آراء طلابنا
+          a(href="#FQA") الأسئلة الشائعة
+
+    //- Fixed Whatsapp Link
+    section.fixed-link 
+      a(href="https://wa.me/201026360040", target="_blank") 
+        img(src="assets/images/whatsapp.svg", alt="Contact Us", width="50", height="50")
+
+    //- Custom JS File
+    script(src="assets/js/app.js") 

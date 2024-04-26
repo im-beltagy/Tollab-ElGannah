@@ -1,0 +1,711 @@
+@import resets
+@import configs
+@import components
+
+// Navigator
+// =========
+// 1. Global Rules
+// 2. Hero Section
+// 3. Nav Bar
+// 4. Main
+// 5. About
+// 6. Services
+
+// ===============
+// 1. Global Rules
+// ===============
+html
+  scroll-behavior: smooth
+  height: 100%
+
+body
+  height: 100%
+  background: $c-light
+  color: $c-dark
+  font-family: $f-ordinary
+
+section
+  scroll-margin-top: 3.5rem
+
+::selection
+  background: rgba(darken($c-accent, 25%), 40%)
+
+:has(> .shape-divider)
+  position: relative
+  --divider-height: 2rem
+  --divider-width: 167%
+  @include sm-screens
+    --divider-height: 4rem
+  @include md-screens
+    --divider-height: 6rem
+  @include lg-screens
+    --divider-height: 6rem
+    --divider-width: 100%
+
+.shape-divider
+  position: absolute
+  left: 0
+  width: var(--divider-width)
+  overflow: hidden
+
+  &.bottom
+    bottom: 0
+    transform: rotate(180deg)
+  &.top
+    top: 0
+
+  svg
+    position: relative
+    display: block
+    width: 100%
+    height: var(--divider-height)
+
+  .shape-fill
+    fill: $c-light
+
+// ===============
+// 2. Hero Section
+// ===============
+.hero
+  padding-bottom: var(--divider-height)
+  background-attachment: fixed
+  background-size: cover
+  background-position: center 60%
+  background-image: url("../images/hero/hero-bg.webp"), url("../images/hero/hero-bg-px.jpg")
+
+  &::before
+    content: ""
+    position: absolute
+    inset: 0
+    background: linear-gradient(to top, #0009, #0001)
+    backdrop-filter: blur(3px)
+    
+  .container
+    position: relative
+    z-index: 5
+
+// ==========
+// 3. Nav Bar
+// ==========
+.navbar
+  position: absolute
+  top: $s-4 * 2
+  inset-inline: 0
+  transition: background $fast-trans
+  z-index: 1000
+  box-shadow: 0px -2.5px 31.1px rgba(0, 0, 0, 0.02), 0px -4px 48.3px rgba(0, 0, 0, 0.028), 0px -3.4px 62px rgba(0, 0, 0, 0.035), 0px 1.6px 76.5px rgba(0, 0, 0, 0.042), 0px 18px 96.7px rgba(0, 0, 0, 0.05), 0px 88px 138px rgba(0, 0, 0, 0.07)
+  
+  &.fixed
+    position: fixed
+    top: 0
+    background: #0009
+
+  .container
+    padding: $s-3 0
+    display: flex
+    align-items: center
+    justify-content: space-between
+    gap: $s-5
+    font-size: 1.2rem
+
+  .brand
+    font-family: $f-special
+    color: $c-accent
+    font-size: 1.3em
+    flex-basis: 12rem
+
+    img
+      width: 100%
+      height: auto
+
+  .nav-icon
+    position: relative
+    margin-inline-start: auto
+    width: 1.5rem
+    flex-shrink: 0
+    aspect-ratio: 1 / 1
+    cursor: pointer
+    overflow: hidden
+    @include md-screens
+      display: none
+
+    span
+      display: block
+      position: absolute
+      left: 0
+      width: 100%
+      height: .2rem
+      background-color: $c-light
+      border-radius: .1rem
+      transition: background-color $fast-trans, inset $fast-trans, transform $fast-trans
+      &:first-child
+        top: 0
+      &:nth-child(2)
+        top: 50%
+        transform: translateY(-50%)
+      &:last-child
+        bottom: 0
+    &:hover span
+      background-color: $c-accent
+    &.opened span
+      &:first-child
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%) rotate(45deg)
+      &:nth-child(2)
+        left: 100%
+      &:last-child
+        bottom: 50%
+        left: 50%
+        transform: translate(-50%, 50%) rotate(-45deg)
+
+  .nav-list
+    position: absolute
+    top: 100%
+    inset-inline-end: 0
+    display: grid
+    grid-template-rows: 0fr
+    transition: grid-template-rows $md-trans
+    background-color: inherit
+    &.opened
+      grid-template-rows: 1fr
+    @include md-screens
+      position: static
+      display: flex
+      align-items: center
+      height: auto
+
+    ul
+      overflow: hidden
+      background: #0009
+      @include md-screens
+        background: unset
+        overflow: visible
+        display: flex
+        gap: $s-4
+      
+    li
+      font-size: 1.1rem
+      cursor: pointer
+      position: relative
+      color: $c-light
+      &:hover 
+        color: $c-accent
+      &::before
+        content: ""
+        position: absolute
+        top: 0
+        inset-inline-end: 0
+        width: 100%
+        height: .1rem
+        background-color: $c-light
+        transition: width $fast-trans, background-color $fast-trans
+      @include md-screens
+        &:not(#lang-switcher)::before
+          top: 100%
+          width: 0
+          height: .2rem
+          border-radius: .1rem
+        &:not(#lang-switcher):hover::before
+          inset-inline-end: auto
+          inset-inline-start: 0
+          width: 100%
+          background-color: $c-accent
+
+      a
+        display: inline-block
+        color: inherit
+        font-size: 1.1em
+        font-weight: 500
+        text-decoration: none
+        transition: color $fast-trans
+        padding: $s-3
+        padding-inline: $s-2 ($s-5 + $s-5 - $s-2)
+        transition: padding-inline $fast-trans
+        @include md-screens
+          padding: 0
+      &:hover a
+        padding-inline: $s-5 $s-5
+        @include md-screens
+          padding: 0
+
+// =======
+// 4. Main
+// =======
+main
+  color: $c-light
+  text-align: center
+  @include md-screens
+    font-size: 1.2rem
+
+  .container
+    padding-top: 14.2rem !important
+
+  .content
+    max-width: 40rem
+    margin-inline: auto
+
+  h1
+    font-size: 2.3em
+    font-weight: 900
+    margin: 0
+    white-space: balance
+    font-family: $f-special
+
+  hr
+    width: 3em
+    margin: $s-2 auto $s-3
+    border-color: $c-accent
+
+  p
+    margin: 0
+    font-size: 1.5em
+    white-space: balance
+
+  .btn
+    margin: $s-5 auto 0
+
+// ========
+// 5. About
+// ========
+.about .container
+  padding-bottom:  0
+  .card
+    background-color: #eee
+    overflow: hidden
+    border-radius: 1rem
+
+    .sm, .md, .lg
+      display: none
+    @include sm-screens
+      .xsm
+        display: none
+      .sm
+        display: block
+    @include md-screens
+      display: flex
+      flex-direction: row-reverse
+      align-items: stretch
+      gap: $s-1
+      .sm
+        display: none
+      .md
+        display: block
+
+    .picture
+      width: 100%
+      margin-inline: auto
+      @include md-screens
+        width: 40%
+        flex-shrink: 0
+      @include lg-screens
+        width: 25%
+      .img-container
+        height: 100%
+      img
+        height: 100%
+        object-fit: cover
+
+    .content
+      margin-top: $s-3
+      padding: $s-4
+      padding-bottom: $s-3
+      text-align: center
+      white-space: balance
+      @include md-screens
+        text-align: start
+        margin-top: 0
+
+      h4
+        color: $c-secondary
+        font-size: 1.4rem
+        font-family: $f-special
+
+      h2
+        color: $c-primary
+        font-family: $f-special
+        font-weight: 900
+        margin: -$s-1 0 $s-1
+
+      h2, h4
+        position: relative
+
+      p
+        line-height: 2
+
+      .social
+        font-size: 1.7rem
+        display: flex
+        justify-content: center
+        gap: $s-3
+        margin-top: $s-1
+        @include md-screens
+          justify-content: flex-start
+
+        i
+          color: rgba($c-dark, 80%)
+          cursor: pointer
+          &:hover
+            color: $c-accent
+          
+// ===========
+// 6. Services
+// ===========
+.services .container
+  .cards
+    display: grid
+    // gap: $s-5
+    @include md-screens
+      grid-template-columns: repeat(2, 1fr)
+    @include lg-screens
+      grid-template-columns: repeat(3, 1fr)
+    
+    .card
+      flex-basis: calc((100% - $s-5*2) / 3)
+      display: flex
+      flex-direction: column
+      align-items: center
+      // gap: $s-2
+
+      .img
+        height: 15rem
+        max-width: 85vw
+        aspect-ratio: 1 / 1
+        img
+          display: block
+          margin-inline: auto
+          height: 100%
+
+      text-align: center
+      .card__title .underline
+        width: 100%
+        max-width: 18ch
+        margin: 0 auto .5rem
+      
+      .card__content
+        max-width: 20rem
+
+        p
+          margin-inline: auto
+
+        li
+          position: relative
+          text-align: start
+          margin-inline-start: 1.5rem
+          padding-inline-start: .8rem
+
+          &::before
+           content: ""
+           position: absolute
+           top: 1.3ch
+           inset-inline-start: 0
+           width: .4rem
+           aspect-ratio: 1/1
+           border-radius: 100%
+           background-color: $c-dark 
+                  
+// ==============================
+// 7. Reminder & Last-Reminder BG
+// ==============================
+.reminder, .last-reminder
+  position: relative
+  background-size: cover
+  background-position: center 30%
+  background-image: url("../images/reminder/masjed-xsm.webp"), url("../images/reminder/masjed-px.jpg")
+  @include sm-screens
+  background-image: url("../images/reminder/masjed-sm.webp"), url("../images/reminder/masjed-px.jpg")
+  @include md-screens
+  background-image: url("../images/reminder/masjed-md.webp"), url("../images/reminder/masjed-px.jpg")
+  @include lg-screens
+  background-image: url("../images/reminder/masjed-lg.webp"), url("../images/reminder/masjed-px.jpg")
+  @media (min-width: 1440px)
+  background-image: url("../images/reminder/masjed-xlg.webp"), url("../images/reminder/masjed-px.jpg")
+
+  &::before
+    content: ""
+    position: absolute
+    inset: 0
+    background-color: #251A0C77
+
+  .container
+    position: relative
+    color: $c-light
+
+// ===========
+// 8. Reminder
+// ===========
+.reminder
+  p
+    padding: $s-5 0
+    text-align: center
+    font-size: 2.5rem
+    white-space: balance
+
+    @include lg-screens
+      padding: $s-5 *1.5 0
+      
+    span
+      font-family: $f-special
+      font-weight: bold
+
+// ===============
+// 9. Testimonials
+// ===============
+.testimonials
+  .slider
+    position: relative
+    margin-inline: auto
+    @include sm-screens
+      width: 24rem
+    @include md-screens
+      width: 100%
+
+    .cards-container
+      gap: $s-4
+      position: relative 
+      overflow: hidden
+      margin-inline: auto
+      --images-count: 1
+      @include md-screens
+        width: calc(100% - 7rem)
+        --images-count: 2
+      @include lg-screens
+        --images-count: 3
+
+    .card
+      --space: 0
+      position: absolute
+      right: var(--space)
+      top: 0
+      transition: inset $fast-trans
+      overflow: hidden
+      border: .5rem solid $c-secondary
+      border-radius: 1.2rem
+      img
+        width: 100%
+    
+    .slider-controls
+      padding: $s-4
+      width: 100%
+      display: flex
+      justify-content: space-between
+      @include md-screens
+        padding-inline: 0
+        position: absolute
+        transform: translateY(-50%)
+        top: 50%
+        left: 0
+      button
+        display: block
+        height: 2.5rem
+        aspect-ratio: 1 / 1
+        border: solid $c-secondary
+        border-width: .5rem 0 0 .5rem
+        border-radius: .3rem
+        cursor: pointer
+        user-select: none
+        background: unset
+        transition: border-color $fast-trans
+        &:hover
+          border-color: rgba($c-secondary, 70%)
+        &.disabled
+          pointer-events: none
+          border-color: rgba($c-secondary, 30%)
+        &:not(:focus) 
+          outline: none
+        &.prev
+          transform: rotate(135deg)
+        &.next
+          transform: rotate(-45deg)
+
+// =======
+// 10. FQA
+// =======
+.FQA
+  $__c-accent: darken($c-accent, 15%)
+  .box
+    border: 1px solid $c-secondary
+    border-radius: 1rem
+
+    .row:not(:last-child)
+      border-bottom: 1px solid $c-secondary
+
+    .q
+      display: flex
+      justify-content: space-between
+      align-items: center
+      padding: $s-3
+      font-size: 1.4rem
+      font-weight: 700
+      cursor: pointer
+      transition: color $fast-trans
+
+      .arrow
+        display: block
+        height: 1.2rem
+        aspect-ratio: 1 / 1
+        border: solid $c-secondary
+        border-width: .4rem .4rem 0 0
+        border-radius: .3rem
+        cursor: pointer
+        user-select: none
+        background: unset
+        transform:  rotate(45deg)
+        transition: border-color $fast-trans, transform $fast-trans
+
+    .row.opened, .row:hover
+      .q 
+        color: $__c-accent
+      .arrow
+        border-color: $__c-accent
+
+    .row.opened .arrow
+      transform: rotate(135deg)
+
+    .a
+      padding: 0 $s-3
+      display: grid
+      grid-template-rows: 0fr
+      overflow: hidden
+      transition: grid-template-rows $md-trans
+      div
+        min-height: 0
+    .row.opened .a
+      grid-template-rows: 1fr
+
+    .a p
+      position: relative
+      padding: $s-3 0
+      font-size: 1.2rem
+      &::before
+        content: ""
+        position: absolute
+        inset-inline: 0
+        top: 0
+        height: 1px
+        background-color: $__c-accent
+
+// =================
+// 11. Last-Reminder
+// =================
+.last-reminder .container
+  display: grid
+  justify-content: center
+  text-align: center
+  gap: $s-4
+  @include md-screens
+    grid-template-columns: 1fr auto
+    align-items: center
+    text-align: start
+
+  .text
+    @include sm-screens
+      font-size: 1.1rem
+    @include md-screens
+      font-size: 1.4rem
+    @include lg-screens
+      font-size: 2rem
+
+    h2
+      font-family: $f-special
+
+  .btn
+    border-radius: .5rem
+
+// ==========
+// 12. Footer
+// ==========
+footer
+  background: $c-dark
+
+  .container
+    display: grid
+    text-align: center
+    gap: $s-3
+
+    @include md-screens
+      grid-template-columns: auto auto
+      justify-content: space-between
+      gap: $s-5
+      align-items: center
+
+    .row
+      width: min(100%, 12rem)
+      margin: 0 auto
+      @include sm-screens
+        width: 25rem
+      @include md-screens
+        width: 12rem
+      @include lg-screens
+        width: 20rem
+
+    .brand
+      width: 100%
+      img
+        width: 100%
+        height: auto
+
+    .social
+      @include sm-screens
+        display: flex
+        gap: $s-3
+        justify-content: center
+      @include md-screens
+        display: block
+        justify-content: space-between
+      @include lg-screens
+        display: flex
+        justify-content: space-between
+        padding-inline: 1rem
+      a
+        display: flex
+        gap: $s-2
+        align-items: center
+        justify-content: center
+
+    a
+      display: block
+      font-size: 1.2rem
+      color: $c-light
+      &:hover
+        color: $c-accent
+
+    .pagination
+      @include sm-screens
+        display: grid
+        grid-template-columns: repeat(2, auto)
+        justify-content: center
+        column-gap: $s-5
+        :last-child
+          grid-column: span 2
+      @include md-screens
+        grid-template-columns: repeat(5, auto)
+        column-gap: $s-4
+        a:not(:last-child)
+          position: relative
+          &::after
+            content: ""
+            background: $c-light
+            width: 1px
+            height: 80%
+            position: absolute
+            left: calc(-1 * $s-4/2)
+            top: 50%
+            transform: translateY(-50%)
+        :last-child
+          grid-column: span 1
+
+// =================
+// 13. Whatsapp Link
+// =================
+.fixed-link
+  position: fixed
+  bottom: 0
+  margin: $s-4
+
+  a
+    display: block
+    width: fit-content
+
+  img
+    filter: drop-shadow(0 0 1rem #0008)
